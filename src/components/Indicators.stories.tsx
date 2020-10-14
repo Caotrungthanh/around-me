@@ -10,8 +10,10 @@ export default {
 //   },
 };
 
-export const DefaultIndicator = () => (
-  <div style={{backgroundColor: '#4cd137', width: '100vw', height: '100vh'}}>
-    <Indicators total={6} currentIndex={3}/>
-  </div>
-);
+export const DefaultIndicator = () => {
+  const [currentIdx, setCurrentIdx] = React.useState(0);
+  
+  return <div style={{backgroundColor: '#4cd137', width: '100vw', height: '100vh'}}>
+          <Indicators total={6} currentIndex={currentIdx} onSelect={setCurrentIdx}/>
+        </div>
+};
